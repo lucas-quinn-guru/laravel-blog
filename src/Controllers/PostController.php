@@ -23,7 +23,7 @@ class PostController extends Controller
     {
         $posts = Post::orderby('id', 'desc')->paginate(5); //show only 5 items at a time in descending order
 
-        return view('posts.index', compact('posts'));
+        return view('laravel-blog::posts.index', compact('posts'));
     }
 
     /**
@@ -33,7 +33,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        return view('laravel-blog::posts.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class PostController extends Controller
 
         //Display a successful message upon save
         return redirect()
-            ->route('posts.index')
+            ->route('laravel-blog::posts.index')
             ->with('flash_message', 'Article, '. $post->title.' created');
     }
 
@@ -74,7 +74,7 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id); //Find post of id = $id
 
-        return view ('posts.show', compact('post'));
+        return view ('laravel-blog::posts.show', compact('post'));
     }
 
     /**
@@ -87,7 +87,7 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
 
-        return view('posts.edit', compact('post'));
+        return view('laravel-blog::posts.edit', compact('post'));
     }
 
     /**
@@ -110,7 +110,7 @@ class PostController extends Controller
         $post->save();
 
         return redirect()
-            ->route('posts.show', $post->id)
+            ->route('laravel-blog::posts.show', $post->id)
             ->with('flash_message',  'Article, '. $post->title.' updated');
     }
 
@@ -126,7 +126,7 @@ class PostController extends Controller
         $post->delete();
 
         return redirect()
-            ->route('posts.index')
+            ->route('laravel-blog::posts.index')
             ->with('flash_message', 'Article successfully deleted');
 
     }
