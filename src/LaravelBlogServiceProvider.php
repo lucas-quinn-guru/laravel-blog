@@ -14,7 +14,7 @@ class LaravelBlogServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__ . '/../config/laravel_user.php',
+            __DIR__ . '/../config/laravel_blog.php',
             'laravel_blog'
         );
     }
