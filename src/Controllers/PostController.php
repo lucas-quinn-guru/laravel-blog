@@ -1,10 +1,10 @@
 <?php
 
-namespace LucasQuinnGuru\LaravelBlog\Controllers;
+namespace LucasQuinnGuru\LaravelPost\Controllers;
 
 use Illuminate\Http\Request;
 
-use LucasQuinnGuru\LaravelBlog\Models\Post;
+use LucasQuinnGuru\LaravelPost\Models\Post;
 use Auth;
 use Session;
 
@@ -23,7 +23,7 @@ class PostController extends Controller
     {
         $posts = Post::orderby('id', 'desc')->paginate(5); //show only 5 items at a time in descending order
 
-        return view('laravel-blog::posts.index', compact('posts'));
+        return view('sitetronic-post::posts.index', compact('posts'));
     }
 
     /**
@@ -33,7 +33,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('laravel-blog::posts.create');
+        return view('sitetronic-post::posts.create');
     }
 
     /**
@@ -74,7 +74,7 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id); //Find post of id = $id
 
-        return view ('laravel-blog::posts.show', compact('post'));
+        return view ('sitetronic-post::posts.show', compact('post'));
     }
 
     /**
@@ -87,7 +87,7 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
 
-        return view('laravel-blog::posts.edit', compact('post'));
+        return view('sitetronic-post::posts.edit', compact('post'));
     }
 
     /**

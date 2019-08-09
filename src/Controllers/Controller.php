@@ -1,6 +1,6 @@
 <?php
 
-namespace LucasQuinnGuru\LaravelBlog\Controllers;
+namespace LucasQuinnGuru\LaravelPost\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;

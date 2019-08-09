@@ -1,6 +1,6 @@
 <?php
 
-namespace LucasQuinnGuru\LaravelBlog\Commands;
+namespace LucasQuinnGuru\LaravelPost\Commands;
 
 use Illuminate\Console\Command;
 use App\Models\User;

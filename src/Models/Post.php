@@ -1,6 +1,6 @@
 <?php
 
-namespace LucasQuinnGuru\LaravelBlog\Models;
+namespace LucasQuinnGuru\LaravelPost\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

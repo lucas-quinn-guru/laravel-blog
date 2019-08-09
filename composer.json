@@ -1,5 +1,5 @@
 {
-    "name": "lucas-quinn-guru/laravel-blog",
+    "name": "lucas-quinn-guru/sitetronic-post",
     "description": "Front end blog and posts with out of the box with blog and post management backend.",
     "type": "library",
     "license": "MIT",
@@ -16,13 +16,13 @@
     },
     "autoload": {
         "psr-4": {
-            "LucasQuinnGuru\\LaravelBlog\\": "src/"
+            "LucasQuinnGuru\\LaravelPost\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "LucasQuinnGuru\\LaravelBlog\\LaravelBlogServiceProvider"
+                "LucasQuinnGuru\\LaravelPost\\LaravelPostServiceProvider"
             ]
         }
     }
