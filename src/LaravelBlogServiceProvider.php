@@ -6,6 +6,11 @@ use Illuminate\Support\ServiceProvider;
 
 class LaravelBlogServiceProvider extends ServiceProvider
 {
+
+    protected $commands = [
+        'LucasQuinnGuru\LaravelBlog\Commands\SeedRolesAndPermissionsCommand'
+    ];
+
     /**
      * Register services.
      *
@@ -17,6 +22,8 @@ class LaravelBlogServiceProvider extends ServiceProvider
             __DIR__ . '/../config/laravel_blog.php',
             'laravel_blog'
         );
+
+        $this->commands($this->commands);
     }
 
     /**

@@ -3,25 +3,28 @@
 @section('titlePage', 'Edit Post')
 
 @section('content')
-<div class="row">
+<div class="container">
+    <div class="row">
 
-    <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-8 col-md-offset-2">
 
-        <h1>Edit Post</h1>
-        <hr>
-            {{ Form::model($post, [ 'route' => [ 'posts.update', $post->id], 'method' => 'PUT'] ) }}
-            <div class="form-group">
-            {{ Form::label('title', 'Title') }}
-            {{ Form::text('title', null, array('class' => 'form-control')) }}<br>
+            <h1>Edit Post</h1>
+            <hr>
+                {{ Form::model($post, [ 'route' => [ 'posts.update', $post->id], 'method' => 'PUT'] ) }}
+                <div class="form-group">
+                    {{ Form::label('title', 'Title') }}
+                    {{ Form::text('title', null, array('class' => 'form-control')) }}<br>
 
-            {{ Form::label('body', 'Post Body') }}
-            {{ Form::textarea('body', null, array('class' => 'form-control')) }}<br>
+                    {{ Form::label('body', 'Post Body') }}
+                    {{ Form::textarea('body', null, array('class' => 'form-control')) }}<br>
 
-            {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
+                    {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
 
-            {{ Form::close() }}
-    </div>
+                    {{ Form::close() }}
+                </div>
+        </div>
     </div>
 </div>
+
 
 @endsection
