@@ -9,7 +9,7 @@
 
         <h1>Edit Post</h1>
         <hr>
-            {{ Form::model($post, array[ 'route' => [ 'posts.update', $post->id], 'method' => 'PUT'] ] }}
+            {{ Form::model($post, [ 'route' => [ 'posts.update', $post->id], 'method' => 'PUT'] ) }}
             <div class="form-group">
             {{ Form::label('title', 'Title') }}
             {{ Form::text('title', null, array('class' => 'form-control')) }}<br>

@@ -46,7 +46,7 @@ class PostController extends Controller
     {
         //Validating title and body field
         $this->validate(
-            $request, 
+            $request,
             [
                 'title'=>'required|max:100',
                 'body' =>'required',
@@ -60,7 +60,7 @@ class PostController extends Controller
 
         //Display a successful message upon save
         return redirect()
-            ->route('laravel-blog::posts.index')
+            ->route('posts.index')
             ->with('flash_message', 'Article, '. $post->title.' created');
     }
 
@@ -110,7 +110,7 @@ class PostController extends Controller
         $post->save();
 
         return redirect()
-            ->route('laravel-blog::posts.show', $post->id)
+            ->route('posts.show', $post->id)
             ->with('flash_message',  'Article, '. $post->title.' updated');
     }
 
@@ -126,7 +126,7 @@ class PostController extends Controller
         $post->delete();
 
         return redirect()
-            ->route('laravel-blog::posts.index')
+            ->route('posts.index')
             ->with('flash_message', 'Article successfully deleted');
 
     }

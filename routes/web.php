@@ -1,7 +1,7 @@
 <?php
 
-Route::group(['namespace' => 'LucasQuinnGuru\LaravelBlog\Controllers'], function () {
+Route::group(['middleware'=>['web'], 'namespace' => 'LucasQuinnGuru\LaravelBlog\Controllers'], function () {
     //Route::get('/blog', ['uses' => 'PostController@index']);
 
-    Route::resource('blog', 'PostController');
+    Route::resource('posts', 'PostController');
 });
