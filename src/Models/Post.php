@@ -1,6 +1,6 @@
 <?php
 
-namespace LucasQuinnGuru\LaravelPost\Models;
+namespace LucasQuinnGuru\SitetronicPost\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

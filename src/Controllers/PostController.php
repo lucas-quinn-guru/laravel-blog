@@ -1,10 +1,10 @@
 <?php
 
-namespace LucasQuinnGuru\LaravelPost\Controllers;
+namespace LucasQuinnGuru\SitetronicPost\Controllers;
 
 use Illuminate\Http\Request;
 
-use LucasQuinnGuru\LaravelPost\Models\Post;
+use LucasQuinnGuru\SitetronicPost\Models\Post;
 use Auth;
 use Session;
 

@@ -1,14 +1,14 @@
 <?php
 
-namespace LucasQuinnGuru\LaravelBlog;
+namespace LucasQuinnGuru\SitetronicPost;
 
 use Illuminate\Support\ServiceProvider;
 
-class LaravelBlogServiceProvider extends ServiceProvider
+class SitetronicPostServiceProvider extends ServiceProvider
 {
 
     protected $commands = [
-        'LucasQuinnGuru\LaravelBlog\Commands\SeedRolesAndPermissionsCommand'
+        'LucasQuinnGuru\SitetronicPost\Commands\SeedRolesAndPermissionsCommand'
     ];
 
     /**
@@ -19,8 +19,8 @@ class LaravelBlogServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__ . '/../config/laravel_blog.php',
-            'laravel_blog'
+            __DIR__ . '/../config/sitetronic-post.php',
+            'sitetronic-post'
         );
 
         $this->commands($this->commands);
@@ -35,14 +35,14 @@ class LaravelBlogServiceProvider extends ServiceProvider
     {
         $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
         $this->loadMigrationsFrom(__DIR__.'/../database//migrations');
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-blog');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'sitetronic-post');
 
         $this->publishes([
-            __DIR__ . '/../config/laravel_blog.php' => config_path('laravel_blog.php'),
-        ], 'laravel-blog-config');
+            __DIR__ . '/../config/sitetronic-post.php' => config_path('sitetronic-post.php'),
+        ], 'sitetronic-post-config');
 
         $this->publishes([
-            __DIR__ . '/../resources/assets' => public_path('vendor/lucas-quinn-guru/blog'),
+            __DIR__ . '/../resources/assets' => public_path('vendor/lucas-quinn-guru/post'),
         ], 'assets');
     }
 }

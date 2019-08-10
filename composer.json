@@ -16,13 +16,13 @@
     },
     "autoload": {
         "psr-4": {
-            "LucasQuinnGuru\\LaravelPost\\": "src/"
+            "LucasQuinnGuru\\SitetronicPost\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "LucasQuinnGuru\\LaravelPost\\LaravelPostServiceProvider"
+                "LucasQuinnGuru\\SitetronicPost\\SitetronicPostServiceProvider"
             ]
         }
     }
