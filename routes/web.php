@@ -2,8 +2,6 @@
 
 Route::group(['middleware'=>['web'], 'namespace' => 'LucasQuinnGuru\SitetronicPost\Controllers'], function () {
     Route::name('admin.')->prefix('admin')->group(function () {
-        echo "got here";
-        dd( 'hello' );
         Route::resource('posts', 'Admin\\PostController');
 
     });
