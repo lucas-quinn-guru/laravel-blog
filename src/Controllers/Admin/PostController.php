@@ -1,17 +1,15 @@
 <?php
 
-namespace LucasQuinnGuru\SitetronicPost\Controllers;
+namespace LucasQuinnGuru\SitetronicPost\Controllers\Admin;
 
 use Illuminate\Http\Request;
-
+use LucasQuinnGuru\SitetronicPost\Controllers\Controller;
 use LucasQuinnGuru\SitetronicPost\Models\Post;
-use Auth;
-use Session;
 
 class PostController extends Controller
 {
     public function __construct() {
-        $this->middleware(['web'])->except('index', 'show');
+        $this->middleware(['auth', 'clearance'])->except('index', 'show');
     }
 
     /**
@@ -23,7 +21,7 @@ class PostController extends Controller
     {
         $posts = Post::orderby('id', 'desc')->paginate(5); //show only 5 items at a time in descending order
 
-        return view('sitetronic-post::posts.index', compact('posts'));
+        return view('sitetronic-post::posts.admin.index', compact('posts'));
     }
 
     /**
@@ -33,7 +31,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('sitetronic-post::posts.create');
+        return view('sitetronic-post::posts.admin.create');
     }
 
     /**
@@ -60,7 +58,7 @@ class PostController extends Controller
 
         //Display a successful message upon save
         return redirect()
-            ->route('posts.index')
+            ->route('admin.posts.index')
             ->with('flash_message', 'Article, '. $post->title.' created');
     }
 
@@ -74,7 +72,7 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id); //Find post of id = $id
 
-        return view ('sitetronic-post::posts.show', compact('post'));
+        return view ('sitetronic-post::posts.admin.show', compact('post'));
     }
 
     /**
@@ -87,7 +85,7 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
 
-        return view('sitetronic-post::posts.edit', compact('post'));
+        return view('sitetronic-post::posts.admin.edit', compact('post'));
     }
 
     /**
@@ -110,7 +108,7 @@ class PostController extends Controller
         $post->save();
 
         return redirect()
-            ->route('posts.show', $post->id)
+            ->route('admin.posts.show', $post->id)
             ->with('flash_message',  'Article, '. $post->title.' updated');
     }
 
@@ -126,7 +124,7 @@ class PostController extends Controller
         $post->delete();
 
         return redirect()
-            ->route('posts.index')
+            ->route('admin.posts.index')
             ->with('flash_message', 'Article successfully deleted');
 
     }

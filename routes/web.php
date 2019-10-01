@@ -1,7 +1,12 @@
 <?php
 
 Route::group(['middleware'=>['web'], 'namespace' => 'LucasQuinnGuru\SitetronicPost\Controllers'], function () {
-    //Route::get('/blog', ['uses' => 'PostController@index']);
+    Route::name('admin.')->prefix('admin')->group(function () {
+        echo "got here";
+        dd( 'hello' );
+        Route::resource('posts', 'Admin\\PostController');
+
+    });
 
     Route::resource('posts', 'PostController');
 });
