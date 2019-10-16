@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="container">
-
+    {{ Breadcrumbs::render('sitetronic-posts-admin-show', $post) }}
     <h1>{{ $post->title }}</h1>
     <hr>
     <p class="lead">{!! $post->body !!}</p>
