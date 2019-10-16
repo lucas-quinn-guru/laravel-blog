@@ -2,10 +2,16 @@
 
 @section('content')
     <div class="container">
-        <stream src="2e7888be174a83438be57872906640d9" controls></stream>
-        <script data-cfasync="false" defer
-            type="text/javascript"
-            src="https://embed.videodelivery.net/embed/r4xu.fla9.latest.js?video=2e7888be174a83438be57872906640d9">
-        </script>
+
+        @foreach( $posts as $post)
+            <div class="card mb-4">
+                <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+                <div class="card-body">
+                    <h2 class="card-title">{{ $post->title }}</h2>
+                    <p class="card-text">{{ $post->body }}</p>
+                    <a href="{{ route('posts.show', $post->id ) }}" class="btn btn-primary">Read More &rarr;</a>
+                </div>
+            </div>
+        @endforeach
     </div>
 @endsection
