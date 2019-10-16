@@ -40,26 +40,21 @@
             'searchreplace visualblocks code fullscreen',
             'insertdatetime media table paste code help wordcount'
         ],
-        toolbar: 'undo redo | customDateButton | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat code | help',
+        toolbar: 'undo redo | customMediaButton | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat code | help',
         content_css: [
             '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
             '//www.tiny.cloud/css/codepen.min.css'
         ],
         valid_elements : 'stream[src|controls],a[href|target=_blank],strong/b,div[align],br',
         extended_valid_elements: 'stream[src|controls]',
-        setup: function (editor) {
-            var toTimeHtml = function (date) {
-                return '<time datetime="' + date.toString() + '">' + date.toDateString() + '</time>';
-            };
 
-            editor.addButton('customDateButton', {
-                text: 'Stream',
-                icon: false,
-                tooltip: 'Insert Current Date',
-                disabled: false,
-                onclick: function () {
-                    date = new Date();
-                    editor.insertContent(date.now() + '<stream src="2e7888be174a83438be57872906640d9" controls></stream>');
+
+        setup: function (editor) {
+
+            editor.ui.registry.addButton('customMediaButton', {
+                text: 'My Media',
+                onAction: function (_) {
+                    editor.insertContent('^^autonettv media="2e7888be174a83438be57872906640d9"^^');
                 }
             });
         }
@@ -68,5 +63,4 @@
 
 @push("jscript_src")
 <script src="/js/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
-<script data-cfasync="false" defer type="text/javascript" src="https://embed.videodelivery.net/embed/r4xu.fla9.latest.js?video=2e7888be174a83438be57872906640d9"></script>
 @endpush

@@ -5,7 +5,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-
+        {{ Breadcrumbs::render('sitetronic-posts-admin-edit') }}
         <div class="col-md-8 col-md-offset-2">
 
             <h1>Edit Post</h1>
@@ -62,5 +62,4 @@
 
 @push("jscript_src")
 <script src="/js/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
-<script data-cfasync="false" defer type="text/javascript" src="https://embed.videodelivery.net/embed/r4xu.fla9.latest.js?video=2e7888be174a83438be57872906640d9"></script>
 @endpush
