@@ -4,8 +4,9 @@
 
 @section('content')
 <div class="container">
+    {{ Breadcrumbs::render('sitetronic-posts-admin-edit', $post) }}
     <div class="row">
-        {{ Breadcrumbs::render('sitetronic-posts-admin-edit', $post) }}
+
         <div class="col-md-8 col-md-offset-2">
 
             <h1>Edit Post</h1>

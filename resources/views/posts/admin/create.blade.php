@@ -4,6 +4,7 @@
 
 @section('content')
 <div class="container">
+
     <h1>
         <i class='fa fa-user-plus'></i> Add Blog Post
     </h1>
