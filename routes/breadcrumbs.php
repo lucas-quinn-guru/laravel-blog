@@ -15,9 +15,8 @@ Breadcrumbs::for('sitetronic-posts-admin-show', function ($trail, $post) {
     $trail->push($post->title, route('admin.posts.show', $post->id));
 });
 
-//Non Admin Routes
 Breadcrumbs::for('sitetronic-posts-index', function ($trail) {
-    $trail->parent('sitetronic-core-index');
+    $trail->parent('home');
     $trail->push('Blog', route('posts.index'));
 });
 
