@@ -8,7 +8,7 @@
 
     <h1>{{ $post->title }}</h1>
     <hr>
-    <p class="lead">{{ $post->body }}</p>
+    <p class="lead">{!! $post->body !!}</p>
     <hr>
     {!! Form::open(['method' => 'DELETE', 'route' => ['admin.posts.destroy', $post->id] ]) !!}
     <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
