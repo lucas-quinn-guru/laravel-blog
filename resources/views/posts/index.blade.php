@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-
+        {{ Breadcrumbs::render('sitetronic-posts-index' ) }}
         @foreach( $posts as $post)
             <div class="card mb-4">
                 <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
